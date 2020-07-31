@@ -1,0 +1,408 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage{amsmath,xcolor}
+
+%%%%%%%%%% Start TeXmacs macros
+\newcommand{\mathe}{\mathrm{e}}
+\newcommand{\mathi}{\mathrm{i}}
+\newcommand{\tmcolor}[2]{{\color{#1}{#2}}}
+\newcommand{\tminput}[2]{\trivlist{\item[\color{rgb:black,10;red,9;green,4;yellow,2}{#1}]{\color{blue!50!black}\mbox{}#2}}}
+\newcommand{\tmoutput}[1]{#1}
+\newcommand{\tmsession}[3]{{\tt#3}}
+\newcommand{\tmtexttt}[1]{{\ttfamily{#1}}}
+\newcommand{\tmunfoldedio}[3]{\trivlist{\item[\color{rgb:black,10;red,9;green,4;yellow,2}{#1}]\mbox{}{\color{blue!50!black}#2}\item[]\mbox{}#3}}
+%%%%%%%%%% End TeXmacs macros
+
+\begin{document}
+
+\tmsession{maxima}{default}{
+  \tmoutput{\
+  
+  Maxima 5.41.0 http://maxima.sourceforge.net
+  
+  using Lisp GNU Common Lisp (GCL) GCL 2.6.12
+  
+  Distributed under the GNU Public License. See the file COPYING.
+  
+  Dedicated to the memory of William Schelter.
+  
+  The function bug\_report() provides bug reporting information.}
+  \tminput{\tmcolor{red}{(\%i 1) }}{\ }
+}
+
+\tmsession{maxima}{default}{
+  \tmoutput{\
+  
+  Maxima 5.41.0 http://maxima.sourceforge.net
+  
+  using Lisp GNU Common Lisp (GCL) GCL 2.6.12
+  
+  Distributed under the GNU Public License. See the file COPYING.
+  
+  Dedicated to the memory of William Schelter.
+  
+  The function bug\_report() provides bug reporting information.}
+  \tminput{\tmcolor{red}{(\%i 1) }}{\ }
+}
+
+\tmsession{maxima}{default}{
+  \tmoutput{\
+  
+  Maxima 5.41.0 http://maxima.sourceforge.net
+  
+  using Lisp GNU Common Lisp (GCL) GCL 2.6.12
+  
+  Distributed under the GNU Public License. See the file COPYING.
+  
+  Dedicated to the memory of William Schelter.
+  
+  The function bug\_report() provides bug reporting information.}
+  \tmunfoldedio{\tmcolor{red}{(\%i 2)
+  }}{D1:matrix([exp(\%i*phi[1]),0,0],[0,exp(\%i*phi[2]),0],[0,0,exp(\%i*phi[3])]);}{$\text{\tmtexttt{\tmcolor{red}{(\%o2)
+  }}} \left(\begin{array}{ccc}
+    \mathe^{\mathi \varphi_1} & 0 & 0\\
+    0 & \mathe^{\mathi \varphi_2} & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_3}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 3)
+  }}{D2:matrix([1,0,0],[0,exp(\%i*phi[4]),0],[0,0,exp(\%i*phi[5])])}{$\text{\tmtexttt{\tmcolor{red}{(\%o3)
+  }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \mathe^{\mathi \varphi_4} & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_5}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 4)
+  }}{D3:matrix([1,0,0],[0,1,0],[0,0,exp(\%i*phi[6])]);}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o4) }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_6}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 5)
+  }}{G1:matrix([1,0,0],[0,cos(theta[1]),sin(theta[1])],[0,-sin(theta[1]),cos(theta[1])]);}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o5) }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \cos (\vartheta_1) & \sin (\vartheta_1)\\
+    0 & - \sin (\vartheta_1) & \cos (\vartheta_1)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 6)
+  }}{G2:matrix([cos(theta[2]),sin(theta[2]),0],[-sin(theta[2]),cos(theta[2]),0],[0,0,1]);}{$\text{\tmtexttt{\tmcolor{red}{(\%o6)
+  }}} \left(\begin{array}{ccc}
+    \cos (\vartheta_2) & \sin (\vartheta_2) & 0\\
+    - \sin (\vartheta_2) & \cos (\vartheta_2) & 0\\
+    0 & 0 & 1
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 7)
+  }}{G3:matrix([1,0,0],[0,cos(theta[3]),sin(theta[3])],[0,-sin(theta[3]),cos(theta[3])]);}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o7) }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \cos (\vartheta_3) & \sin (\vartheta_3)\\
+    0 & - \sin (\vartheta_3) & \cos (\vartheta_3)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 8)
+  }}{U:D1.G1.G2.D2.G3.D3}{$\text{\tmtexttt{\tmcolor{red}{(\%o8) }}}
+  \left(\begin{array}{ccc}
+    \mathe^{\mathi \varphi_1} \cos (\vartheta_2) & \mathe^{\mathi \varphi_4 +
+    \mathi \varphi_1} \sin (\vartheta_2) \cos (\vartheta_3) & \mathe^{\mathi
+    \varphi_6 + \mathi \varphi_4 + \mathi \varphi_1} \sin (\vartheta_2) \sin
+    (\vartheta_3)\\
+    - \mathe^{\mathi \varphi_2} \cos (\vartheta_1) \sin (\vartheta_2) &
+    \mathe^{\mathi \varphi_2}  (\mathe^{\mathi \varphi_4} \cos (\vartheta_1)
+    \cos (\vartheta_2) \cos (\vartheta_3) - \mathe^{\mathi \varphi_5} \sin
+    (\vartheta_1) \sin (\vartheta_3)) & \mathe^{\mathi \varphi_2} 
+    (\mathe^{\mathi \varphi_6 + \mathi \varphi_4} \cos (\vartheta_1) \cos
+    (\vartheta_2) \sin (\vartheta_3) + \mathe^{\mathi \varphi_6 + \mathi
+    \varphi_5} \sin (\vartheta_1) \cos (\vartheta_3))\\
+    \mathe^{\mathi \varphi_3} \sin (\vartheta_1) \sin (\vartheta_2) &
+    \mathe^{\mathi \varphi_3}  (- \mathe^{\mathi \varphi_5} \cos (\vartheta_1)
+    \sin (\vartheta_3) - \mathe^{\mathi \varphi_4} \sin (\vartheta_1) \cos
+    (\vartheta_2) \cos (\vartheta_3)) & \mathe^{\mathi \varphi_3} 
+    (\mathe^{\mathi \varphi_6 + \mathi \varphi_5} \cos (\vartheta_1) \cos
+    (\vartheta_3) - \mathe^{\mathi \varphi_6 + \mathi \varphi_4} \sin
+    (\vartheta_1) \cos (\vartheta_2) \sin (\vartheta_3))
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 9)
+  }}{D1h:transpose(conjugate(matrix([exp(\%i*alpha[1]),0,0],[0,exp(\%i*alpha[2]),0],[0,0,exp(\%i*alpha[3])])));}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o9) }}} \left(\begin{array}{ccc}
+    \mathe^{- \mathi \alpha_1} & 0 & 0\\
+    0 & \mathe^{- \mathi \alpha_2} & 0\\
+    0 & 0 & \mathe^{- \mathi \alpha_3}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 10)
+  }}{D2h:transpose(conjugate(matrix([1,0,0],[0,exp(\%i*alpha[4]),0],[0,0,exp(\%i*alpha[5])])));}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o10) }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \mathe^{- \mathi \alpha_4} & 0\\
+    0 & 0 & \mathe^{- \mathi \alpha_5}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 11)
+  }}{D3h:transpose(conjugate(matrix([1,0,0],[0,1,0],[0,0,exp(\%i*alpha[6])])));}{$\text{\tmtexttt{\tmcolor{red}{(\%o11)
+  }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & \mathe^{- \mathi \alpha_6}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 12)
+  }}{G1h:transpose(conjugate(matrix([1,0,0],[0,cos(gamma[1]),sin(gamma[1])],[0,-sin(gamma[1]),cos(gamma[1])])));}{$\text{\tmtexttt{\tmcolor{red}{(\%o12)
+  }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \cos (\gamma_1) & - \sin (\gamma_1)\\
+    0 & \sin (\gamma_1) & \cos (\gamma_1)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 13)
+  }}{G2h:transpose(conjugate(matrix([cos(gamma[2]),sin(gamma[2]),0],[-sin(gamma[2]),cos(gamma[2]),0],[0,0,1])));}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o13) }}} \left(\begin{array}{ccc}
+    \cos (\gamma_2) & - \sin (\gamma_2) & 0\\
+    \sin (\gamma_2) & \cos (\gamma_2) & 0\\
+    0 & 0 & 1
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 14)
+  }}{G3h:transpose(conjugate(matrix([1,0,0],[0,cos(gamma[3]),sin(gamma[3])],[0,-sin(gamma[3]),cos(gamma[3])])));}{$\text{\tmtexttt{\tmcolor{red}{(\%o14)
+  }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \cos (\gamma_3) & - \sin (\gamma_3)\\
+    0 & \sin (\gamma_3) & \cos (\gamma_3)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 15)
+  }}{Uh:D1h.G1h.G2h.D2h.G3h.D3h}{$\text{\tmtexttt{\tmcolor{red}{(\%o15) }}}
+  \left(\begin{array}{ccc}
+    \mathe^{- \mathi \alpha_1} \cos (\gamma_2) & - \mathe^{- \mathi \alpha_4 -
+    \mathi \alpha_1} \sin (\gamma_2) \cos (\gamma_3) & \mathe^{- \mathi
+    \alpha_6 - \mathi \alpha_4 - \mathi \alpha_1} \sin (\gamma_2) \sin
+    (\gamma_3)\\
+    \mathe^{- \mathi \alpha_2} \cos (\gamma_1) \sin (\gamma_2) & \mathe^{-
+    \mathi \alpha_2}  (\mathe^{- \mathi \alpha_4} \cos (\gamma_1) \cos
+    (\gamma_2) \cos (\gamma_3) - \mathe^{- \mathi \alpha_5} \sin (\gamma_1)
+    \sin (\gamma_3)) & \mathe^{- \mathi \alpha_2}  (- \mathe^{- \mathi
+    \alpha_6 - \mathi \alpha_4} \cos (\gamma_1) \cos (\gamma_2) \sin
+    (\gamma_3) - \mathe^{- \mathi \alpha_6 - \mathi \alpha_5} \sin (\gamma_1)
+    \cos (\gamma_3))\\
+    \mathe^{- \mathi \alpha_3} \sin (\gamma_1) \sin (\gamma_2) & \mathe^{-
+    \mathi \alpha_3}  (\mathe^{- \mathi \alpha_5} \cos (\gamma_1) \sin
+    (\gamma_3) + \mathe^{- \mathi \alpha_4} \sin (\gamma_1) \cos (\gamma_2)
+    \cos (\gamma_3)) & \mathe^{- \mathi \alpha_3}  (\mathe^{- \mathi \alpha_6
+    - \mathi \alpha_5} \cos (\gamma_1) \cos (\gamma_3) - \mathe^{- \mathi
+    \alpha_6 - \mathi \alpha_4} \sin (\gamma_1) \cos (\gamma_2) \sin
+    (\gamma_3))
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 16) }}{G1.G2}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o16) }}} \left(\begin{array}{ccc}
+    \cos (\vartheta_2) & \sin (\vartheta_2) & 0\\
+    - \cos (\vartheta_1) \sin (\vartheta_2) & \cos (\vartheta_1) \cos
+    (\vartheta_2) & \sin (\vartheta_1)\\
+    \sin (\vartheta_1) \sin (\vartheta_2) & - \sin (\vartheta_1) \cos
+    (\vartheta_2) & \cos (\vartheta_1)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 17)
+  }}{D2.G3}{$\text{\tmtexttt{\tmcolor{red}{(\%o17) }}}
+  \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \mathe^{\mathi \varphi_4} \cos (\vartheta_3) & \mathe^{\mathi
+    \varphi_4} \sin (\vartheta_3)\\
+    0 & - \mathe^{\mathi \varphi_5} \sin (\vartheta_3) & \mathe^{\mathi
+    \varphi_5} \cos (\vartheta_3)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 18) }}{G2.D2}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o18) }}} \left(\begin{array}{ccc}
+    \cos (\vartheta_2) & \mathe^{\mathi \varphi_4} \sin (\vartheta_2) & 0\\
+    - \sin (\vartheta_2) & \mathe^{\mathi \varphi_4} \cos (\vartheta_2) & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_5}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 19)
+  }}{Uhh:transpose(conjugate(Uh));}{$\text{\tmtexttt{\tmcolor{red}{(\%o19) }}}
+  \left(\begin{array}{ccc}
+    \mathe^{\mathi \alpha_1} \cos (\gamma_2) & \mathe^{\mathi \alpha_2} \cos
+    (\gamma_1) \sin (\gamma_2) & \mathe^{\mathi \alpha_3} \sin (\gamma_1) \sin
+    (\gamma_2)\\
+    - \mathe^{\mathi \alpha_4 + \mathi \alpha_1} \sin (\gamma_2) \cos
+    (\gamma_3) & \mathe^{\mathi \alpha_2}  (\mathe^{\mathi \alpha_4} \cos
+    (\gamma_1) \cos (\gamma_2) \cos (\gamma_3) - \mathe^{\mathi \alpha_5} \sin
+    (\gamma_1) \sin (\gamma_3)) & \mathe^{\mathi \alpha_3}  (\mathe^{\mathi
+    \alpha_5} \cos (\gamma_1) \sin (\gamma_3) + \mathe^{\mathi \alpha_4} \sin
+    (\gamma_1) \cos (\gamma_2) \cos (\gamma_3))\\
+    \mathe^{\mathi \alpha_6 + \mathi \alpha_4 + \mathi \alpha_1} \sin
+    (\gamma_2) \sin (\gamma_3) & \mathe^{\mathi \alpha_2}  (- \mathe^{\mathi
+    \alpha_6 + \mathi \alpha_4} \cos (\gamma_1) \cos (\gamma_2) \sin
+    (\gamma_3) - \mathe^{\mathi \alpha_6 + \mathi \alpha_5} \sin (\gamma_1)
+    \cos (\gamma_3)) & \mathe^{\mathi \alpha_3}  (\mathe^{\mathi \alpha_6 +
+    \mathi \alpha_5} \cos (\gamma_1) \cos (\gamma_3) - \mathe^{\mathi \alpha_6
+    + \mathi \alpha_4} \sin (\gamma_1) \cos (\gamma_2) \sin (\gamma_3))
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 20)
+  }}{D1}{$\text{\tmtexttt{\tmcolor{red}{(\%o20) }}} \left(\begin{array}{ccc}
+    \mathe^{\mathi \varphi_1} & 0 & 0\\
+    0 & \mathe^{\mathi \varphi_2} & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_3}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 21) }}{D1h}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o21) }}} \left(\begin{array}{ccc}
+    \mathe^{- \mathi \alpha_1} & 0 & 0\\
+    0 & \mathe^{- \mathi \alpha_2} & 0\\
+    0 & 0 & \mathe^{- \mathi \alpha_3}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 22) }}{transpose(conjugate(D1h)).D1;}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o22) }}} \left(\begin{array}{ccc}
+    \mathe^{\mathi \varphi_1 + \mathi \alpha_1} & 0 & 0\\
+    0 & \mathe^{\mathi \varphi_2 + \mathi \alpha_2} & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_3 + \mathi \alpha_3}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 23)
+  }}{transpose(conjugate(G1h)).G1;}{$\text{\tmtexttt{\tmcolor{red}{(\%o23) }}}
+  \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \cos (\vartheta_1) \cos (\gamma_1) - \sin (\vartheta_1) \sin
+    (\gamma_1) & \cos (\vartheta_1) \sin (\gamma_1) + \sin (\vartheta_1) \cos
+    (\gamma_1)\\
+    0 & - \cos (\vartheta_1) \sin (\gamma_1) - \sin (\vartheta_1) \cos
+    (\gamma_1) & \cos (\vartheta_1) \cos (\gamma_1) - \sin (\vartheta_1) \sin
+    (\gamma_1)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 24) }}{transpose(conjugate(G2h)).G2;}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o24) }}} \left(\begin{array}{ccc}
+    \cos (\vartheta_2) \cos (\gamma_2) - \sin (\vartheta_2) \sin (\gamma_2) &
+    \cos (\vartheta_2) \sin (\gamma_2) + \sin (\vartheta_2) \cos (\gamma_2) &
+    0\\
+    - \cos (\vartheta_2) \sin (\gamma_2) - \sin (\vartheta_2) \cos (\gamma_2)
+    & \cos (\vartheta_2) \cos (\gamma_2) - \sin (\vartheta_2) \sin (\gamma_2)
+    & 0\\
+    0 & 0 & 1
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 25)
+  }}{transpose(conjugate(D2h)).D2;}{$\text{\tmtexttt{\tmcolor{red}{(\%o25) }}}
+  \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \mathe^{\mathi \varphi_4 + \mathi \alpha_4} & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_5 + \mathi \alpha_5}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 26) }}{transpose(conjugate(G3h)).G3;}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o26) }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \cos (\vartheta_3) \cos (\gamma_3) - \sin (\vartheta_3) \sin
+    (\gamma_3) & \cos (\vartheta_3) \sin (\gamma_3) + \sin (\vartheta_3) \cos
+    (\gamma_3)\\
+    0 & - \cos (\vartheta_3) \sin (\gamma_3) - \sin (\vartheta_3) \cos
+    (\gamma_3) & \cos (\vartheta_3) \cos (\gamma_3) - \sin (\vartheta_3) \sin
+    (\gamma_3)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 27)
+  }}{trigreduce(\%o25)}{$\text{\tmtexttt{\tmcolor{red}{(\%o27) }}}
+  \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \mathe^{\mathi \varphi_4 + \mathi \alpha_4} & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_5 + \mathi \alpha_5}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 31) }}{a:G2h.trigreduce(\%o26).G2;}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o31) }}} \left(\begin{array}{ccc}
+    \sin (\vartheta_2) \sin (\gamma_2) \cos (\gamma_3 + \vartheta_3) + \cos
+    (\vartheta_2) \cos (\gamma_2) & \sin (\vartheta_2) \cos (\gamma_2) - \cos
+    (\vartheta_2) \sin (\gamma_2) \cos (\gamma_3 + \vartheta_3) & - \sin
+    (\gamma_2) \sin (\gamma_3 + \vartheta_3)\\
+    \cos (\vartheta_2) \sin (\gamma_2) - \sin (\vartheta_2) \cos (\gamma_2)
+    \cos (\gamma_3 + \vartheta_3) & \cos (\vartheta_2) \cos (\gamma_2) \cos
+    (\gamma_3 + \vartheta_3) + \sin (\vartheta_2) \sin (\gamma_2) & \cos
+    (\gamma_2) \sin (\gamma_3 + \vartheta_3)\\
+    \sin (\vartheta_2) \sin (\gamma_3 + \vartheta_3) & - \cos (\vartheta_2)
+    \sin (\gamma_3 + \vartheta_3) & \cos (\gamma_3 + \vartheta_3)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 32) }}{b:D2h.a.D2;}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o32) }}} \left(\begin{array}{ccc}
+    \sin (\vartheta_2) \sin (\gamma_2) \cos (\gamma_3 + \vartheta_3) + \cos
+    (\vartheta_2) \cos (\gamma_2) & \mathe^{\mathi \varphi_4}  (\sin
+    (\vartheta_2) \cos (\gamma_2) - \cos (\vartheta_2) \sin (\gamma_2) \cos
+    (\gamma_3 + \vartheta_3)) & - \mathe^{\mathi \varphi_5} \sin (\gamma_2)
+    \sin (\gamma_3 + \vartheta_3)\\
+    \mathe^{- \mathi \alpha_4}  (\cos (\vartheta_2) \sin (\gamma_2) - \sin
+    (\vartheta_2) \cos (\gamma_2) \cos (\gamma_3 + \vartheta_3)) &
+    \mathe^{\mathi \varphi_4 - \mathi \alpha_4}  (\cos (\vartheta_2) \cos
+    (\gamma_2) \cos (\gamma_3 + \vartheta_3) + \sin (\vartheta_2) \sin
+    (\gamma_2)) & \mathe^{\mathi \varphi_5 - \mathi \alpha_4} \cos (\gamma_2)
+    \sin (\gamma_3 + \vartheta_3)\\
+    \mathe^{- \mathi \alpha_5} \sin (\vartheta_2) \sin (\gamma_3 +
+    \vartheta_3) & - \mathe^{\mathi \varphi_4 - \mathi \alpha_5} \cos
+    (\vartheta_2) \sin (\gamma_3 + \vartheta_3) & \mathe^{\mathi \varphi_5 -
+    \mathi \alpha_5} \cos (\gamma_3 + \vartheta_3)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 54)
+  }}{A:matrix([cc+c*ss,0,0],[0,e*(c*cc-ss),0],[0,0,e*c]);}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o54) }}} \left(\begin{array}{ccc}
+    c \mathrm{ss} + \mathrm{cc} & 0 & 0\\
+    0 & e \left( c \mathrm{cc} - \mathrm{ss} \right) & 0\\
+    0 & 0 & ce
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 55)
+  }}{B:G3h.A.G3;}{$\text{\tmtexttt{\tmcolor{red}{(\%o55) }}}
+  \left(\begin{array}{ccc}
+    c \mathrm{ss} + \mathrm{cc} & 0 & 0\\
+    0 & \cos (\vartheta_3) \cos (\gamma_3) e \left( c \mathrm{cc} -
+    \mathrm{ss} \right) + \sin (\vartheta_3) \sin (\gamma_3) ce & \sin
+    (\vartheta_3) \cos (\gamma_3) e \left( c \mathrm{cc} - \mathrm{ss} \right)
+    - \cos (\vartheta_3) \sin (\gamma_3) ce\\
+    0 & \cos (\vartheta_3) \sin (\gamma_3) e \left( c \mathrm{cc} -
+    \mathrm{ss} \right) - \sin (\vartheta_3) \cos (\gamma_3) ce & \sin
+    (\vartheta_3) \sin (\gamma_3) e \left( c \mathrm{cc} - \mathrm{ss} \right)
+    + \cos (\vartheta_3) \cos (\gamma_3) ce
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 56)
+  }}{D3h.B.D3;}{$\text{\tmtexttt{\tmcolor{red}{(\%o56) }}}
+  \left(\begin{array}{ccc}
+    c \mathrm{ss} + \mathrm{cc} & 0 & 0\\
+    0 & \cos (\vartheta_3) \cos (\gamma_3) e \left( c \mathrm{cc} -
+    \mathrm{ss} \right) + \sin (\vartheta_3) \sin (\gamma_3) ce &
+    \mathe^{\mathi \varphi_6}  \left( \sin (\vartheta_3) \cos (\gamma_3) e
+    \left( c \mathrm{cc} - \mathrm{ss} \right) - \cos (\vartheta_3) \sin
+    (\gamma_3) ce \right)\\
+    0 & \mathe^{- \mathi \alpha_6}  \left( \cos (\vartheta_3) \sin (\gamma_3)
+    e \left( c \mathrm{cc} - \mathrm{ss} \right) - \sin (\vartheta_3) \cos
+    (\gamma_3) ce \right) & \mathe^{\mathi \varphi_6 - \mathi \alpha_6} 
+    \left( \sin (\vartheta_3) \sin (\gamma_3) e \left( c \mathrm{cc} -
+    \mathrm{ss} \right) + \cos (\vartheta_3) \cos (\gamma_3) ce \right)
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 33) }}{D3}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o33) }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & \mathe^{\mathi \varphi_6}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 34) }}{D3h}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o34) }}} \left(\begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & \mathe^{- \mathi \alpha_6}
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 43)
+  }}{G2}{$\text{\tmtexttt{\tmcolor{red}{(\%o43) }}} \left(\begin{array}{ccc}
+    \cos (\vartheta_2) & \sin (\vartheta_2) & 0\\
+    - \sin (\vartheta_2) & \cos (\vartheta_2) & 0\\
+    0 & 0 & 1
+  \end{array}\right)$}
+  \tmunfoldedio{\tmcolor{red}{(\%i 35) }}{G2h}{\
+  
+  $\text{\tmtexttt{\tmcolor{red}{(\%o35) }}} \left(\begin{array}{ccc}
+    \cos (\gamma_2) & - \sin (\gamma_2) & 0\\
+    \sin (\gamma_2) & \cos (\gamma_2) & 0\\
+    0 & 0 & 1
+  \end{array}\right)$}
+  \tminput{\tmcolor{red}{(\%i 1) }}{\ }
+  \tminput{\tmcolor{red}{(\%i 2) }}{\ }
+  \tminput{\tmcolor{red}{(\%i 3) }}{\ }
+  \tminput{\tmcolor{red}{(\%i 3) }}{\ }
+}
+
+\end{document}

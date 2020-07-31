@@ -1,0 +1,8 @@
+Number of trasmit antennas = 20 with number of receive antennas =  10
+  New strategy Rate Equal power Rate 
+OctSymPy v2.6.0: this is free software without warranty, see source.
+Initializing communication with SymPy using a popen2() pipe.
+Some output from the Python subprocess (pid 8887) might appear next.
+
+OctSymPy: Communication established.  SymPy v1.1.1.
+Waiting..............

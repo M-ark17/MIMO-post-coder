@@ -1,0 +1,280 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out
+                                                          % if you need a4paper
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4
+                                                          % paper
+
+\IEEEoverridecommandlockouts                              % This command is only
+                                                          % needed if you want to
+                                                          % use the \thanks command
+\overrideIEEEmargins
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{mathtools}
+\DeclareMathOperator{\minimize}{minimize}
+\DeclareMathOperator{\subjectto}{subject\ to}
+\title{\LARGE \bf
+Lower bound on achievable Rate with partial CSIR in MIMO TDD systems
+}
+
+%\author{ \parbox{3 in}{\centering Huibert Kwakernaak*
+%         \thanks{*Use the $\backslash$thanks command to put information here}\\
+%         Faculty of Electrical Engineering, Mathematics and Computer Science\\
+%         University of Twente\\
+%         7500 AE Enschede, The Netherlands\\
+%         {\tt\small h.kwakernaak@autsubmit.com}}
+%         \hspace*{ 0.5 in}
+%         \parbox{3 in}{ \centering Pradeep Misra**
+%         \thanks{**The footnote marks may be inserted manually}\\
+%        Department of Electrical Engineering \\
+%         Wright State University\\
+%         Dayton, OH 45435, USA\\
+%         {\tt\small pmisra@cs.wright.edu}}
+%}
+
+%\author{Huibert Kwakernaak$^{1}$ and Pradeep Misra$^{2}$% <-this % stops a space
+%\thanks{*This work was not supported by any organization}% <-this % stops a space
+%\thanks{$^{1}$H. Kwakernaak is with Faculty of Electrical Engineering, Mathematics and Computer Science,
+%        University of Twente, 7500 AE Enschede, The Netherlands
+%        {\tt\small h.kwakernaak at papercept.net}}%
+%\thanks{$^{2}$P. Misra is with the Department of Electrical Engineering, Wright State University,
+%        Dayton, OH 45435, USA
+%        {\tt\small p.misra at ieee.org}}%
+%}
+
+
+\begin{document}
+
+
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+The capacity of the TDD MIMO systems can be greatly improved with the knowledge of perfect CSI at the receiver, since the channel is known to the transmitter. In this paper we propose a feedback mechanism which uses paramerisation and quantisation of channel parameters at the transmitter and reconstruction at the receiver with minimal information loss and formalise the lower bound on achievable rate obtained using this technique.
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{INTRODUCTION}
+
+
+
+\section{SYSTEM MODEL}
+We consider MIMO system with t antennas at transmitter, r antennas at receiver and block fading channel. MIMO channel is modeled by channel matrix $H \in\mathbb{C}^{r \times t}$. That is when input $x \in \mathbb{C}^{t}$ is sent by the transmitter then the receiver receives $y \in \mathbb{C}^r$. $y$ and $x$ are related as following:
+\begin{equation}
+y = Hx + \eta
+\end{equation} 
+
+where $\eta \in \mathbb{C}^{r} $is the additive white Gaussian noise vector with distribution  $C{\cal N}(0_{r,1}, I_{r})$. Let the rank of $H$ be m. And, the singular value decomposition(SVD) of the $H$ is given by $H=U_{H}\Sigma_{H}V_{H}^{\dagger}$ where $U_{H}\in \mathbb{C}^{r\times r}$ and $V_{H}\in \mathbb{C}^{t\times t}$ are unitary matrices and $\Sigma_{H}\in \mathbb{R}^{r\times t}$ and $\Sigma_{H}\in \mathbb{R}^{r\times t}$ contains the singular values $\sigma_{1}\geq\ldots\geq\sigma_{m}>0$ of $H$. And the power constraint is satisfied by choosing x such that $E[x^{\dagger}x]\leq P_{{T}}$.
+
+We assume that the perfect CSI is available at the transmitter and the first $n(0\leq n\leq m)$ columns of $U_{H}$ are to be quantized and feedback to the receiver as channel spatial information. Quantisation results in loss of information there by restricting the transmistter from sending complete channel spatial information. 
+\section{ACHEIVABLE RATE}
+The signal at the receiver is $ y = H\hat{x} + \eta $ where $\hat{x} = V_H^{\dagger} x$ this is possible because we assume perfect CSI at the transmitter
+$$
+Y = U_H\Sigma_HV_H\hat{x} + \eta\eqno{}
+$$
+$$
+Y = U_H\Sigma_Hx + \eta\eqno{}
+$$
+let $\hat{U_H}$ be the partial channel state information at the receiver.
+$$
+\hat{U_H}Y = \hat{U_H}U_H\Sigma_Hx + \hat{U_H}\eta \eqno{}
+$$
+$$
+\hat{U_H}Y = \hat{U_H}U_H\Sigma_Hx + w \eqno{}
+$$
+where $w = \hat{U_H}\eta$ 
+$$
+\hat{U_H}Y = \hat{U_H}U_H\Sigma_Hx+I_r\Sigma_hx-I\sigma_hx+ w \eqno{}
+$$
+$$
+\hat{U_H}Y = (\hat{U_H}U_H-I_r)\Sigma_Hx+I_r\Sigma_hx+ w \eqno{}
+$$
+where $I_r $ is $r \times r$ identity matrix.
+
+Rate = $I(X,Y /\Sigma)$\\
+where $x \in \mathbb{N}(0,k_{\Sigma})$.
+$$
+I(X,Y /\Sigma) = h(Y/\Sigma) - h(Y/\Sigma,x)\eqno{}
+$$
+$$
+I(X,Y /\Sigma) \geq h(Y/\Sigma,H) - h(Y/\Sigma,x)\eqno{}
+$$
+$$
+I(X,Y /\Sigma) \geq h(Y/\Sigma,H) - h(\Sigma x+(\hat U^{\dagger}U-I)\Sigma x+w/\Sigma,x)\eqno{}
+$$
+$$
+I(X,Y /\Sigma) \geq h(Y/\Sigma,H) - h((\hat U^{\dagger}U-I)\Sigma x+w/\Sigma,x)\eqno{(2)}
+$$
+\resizebox{.5 \textwidth}{!} 
+{
+    $h((\hat U^{\dagger}U-I)\Sigma x+w/\Sigma,x) = \mathop{\mathbb{E}}[log(I+(\hat{U}U-I)\Sigma k_\Sigma \Sigma^{\dagger}(\hat{•}t{U}U-I)^{\dagger})]$
+
+}
+where $k_\Sigma$ is the covariance matrix of x after water filling for the optimal power allocation.
+%$$
+%h((\hat U^{\dagger}U-I)\Sigma x+w/\Sigma,x) = \mathop{\mathbb{E}}[log(I+(\hat{U}U-I)\Sigma k_\Sigma \Sigma^{\dagger}(\hat{U}U-I)^{\dagger}]
+%$$
+$$
+log(I+AB) = log(I+BA)
+$$
+\resizebox{.5 \textwidth}{!} 
+{
+    $h((\hat U^{\dagger}U-I)\Sigma x+w/\Sigma,x) = \mathop{\mathbb{E}}[log(I+\Sigma k_\Sigma \Sigma^{\dagger}(\hat{•}t{U}U-I)^{\dagger}(\hat{U}U-I))]$
+
+}
+$$
+\leq h(Y/\Sigma, H)-log|I+\mathop{\mathbb{E}}\Sigma k_\Sigma \Sigma^{\dagger}(\hat{U}U-I)^{\dagger}(\hat{U}U-I)|
+$$
+$$
+B = \hat{U}U-I
+$$
+$$
+B^{\dagger}B = Q_{e}\eqno{(3)}
+$$
+$Q_e$ is the error due to quantisation.
+
+Capacity of this system can be given as 
+$$
+C = \sum_{n=0}^{r-1} log(1+\frac{Pn|h_n|^2}{N_0})
+$$
+where $N_0$ is the noise power.
+
+
+\begin{equation*}
+\begin{aligned}
+& \text{maximize} && C\\
+& \subjectto && {\sum_{n=0}^{r-1}P_n = P_{total}}\\
+\end{aligned}
+\end{equation*}
+
+This can be solved using Lagrangian of the objective function 
+$$
+\mathcal{L}(C,\lambda) = \sum_{n=0}^{r-1} log(1+\frac{Pn|h_n|^2}{N_0}) - \lambda\sum_{n=0}^{r-1}P_n 
+$$
+
+$$
+\frac{d\mathcal{L}(C,\lambda)}{dP_n} = \frac{|h_n|^2}{N_0+|h_n|^2P_n}-\lambda = 0
+$$
+$$
+P_n = \left(\frac{1}{\lambda}-\frac{N_0}{|h_n|^2}\right)^+
+$$
+where
+
+  \begin{equation*}
+    P^+ =
+    \begin{cases*}
+      P & if $P > 0 $ \\
+      0        & otherwise
+    \end{cases*}
+  \end{equation*}
+$$
+\sum_{n=1}^{r}P_n = P_t
+$$
+$$
+\lambda = P_t+\frac{N_0}{|h_n|^2}
+$$
+$N_0 = 1$ 
+$$
+k_\Sigma = \left(\frac{1}{\lambda}-\frac{1}{|h|^2}\right)^+
+$$
+
+since $\Sigma$ and $ k_\Sigma $ are diagonal 
+$\Sigma k_\Sigma\Sigma^{\dagger} = c I_{r \times r}$
+$$
+c = \frac{\mathbb{E}[|h|^2]}{\lambda} - 1 \eqno{(4)}
+$$
+using $(2),(3)$ and $(4)$
+$$
+C \leq h(Y/\Sigma,H) - log|I+cQ_e|
+$$
+
+\section{CONCLUSION}
+
+A conclusion section is not required. Although a conclusion may review the main points of the paper, do not replicate the abstract as the conclusion. A conclusion might elaborate on the importance of the work or suggest applications and extensions. 
+
+\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{APPENDIX}
+
+Appendixes should appear before the acknowledgment.
+
+\section*{ACKNOWLEDGMENT}
+
+The preferred spelling of the word ÒacknowledgmentÓ in America is without an ÒeÓ after the ÒgÓ. Avoid the stilted expression, ÒOne of us (R. B. G.) thanks . . .Ó  Instead, try ÒR. B. G. thanksÓ. Put sponsor acknowledgments in the unnumbered footnote on the first page.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+References are important to the reader; therefore, each citation must be complete and correct. If at all possible, references should be commonly available publications.
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{c1} G. O. Young, ÒSynthetic structure of industrial plastics (Book style with paper title and editor),Ó 	in Plastics, 2nd ed. vol. 3, J. Peters, Ed.  New York: McGraw-Hill, 1964, pp. 15Ð64.
+\bibitem{c2} W.-K. Chen, Linear Networks and Systems (Book style).	Belmont, CA: Wadsworth, 1993, pp. 123Ð135.
+\bibitem{c3} H. Poor, An Introduction to Signal Detection and Estimation.   New York: Springer-Verlag, 1985, ch. 4.
+\bibitem{c4} B. Smith, ÒAn approach to graphs of linear forms (Unpublished work style),Ó unpublished.
+\bibitem{c5} E. H. Miller, ÒA note on reflector arrays (Periodical styleÑAccepted for publication),Ó IEEE Trans. Antennas Propagat., to be publised.
+\bibitem{c6} J. Wang, ÒFundamentals of erbium-doped fiber amplifiers arrays (Periodical styleÑSubmitted for publication),Ó IEEE J. Quantum Electron., submitted for publication.
+\bibitem{c7} C. J. Kaufman, Rocky Mountain Research Lab., Boulder, CO, private communication, May 1995.
+\bibitem{c8} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ÒElectron spectroscopy studies on magneto-optical media and plastic substrate interfaces(Translation Journals style),Ó IEEE Transl. J. Magn.Jpn., vol. 2, Aug. 1987, pp. 740Ð741 [Dig. 9th Annu. Conf. Magnetics Japan, 1982, p. 301].
+\bibitem{c9} M. Young, The Techincal Writers Handbook.  Mill Valley, CA: University Science, 1989.
+\bibitem{c10} J. U. Duncombe, ÒInfrared navigationÑPart I: An assessment of feasibility (Periodical style),Ó IEEE Trans. Electron Devices, vol. ED-11, pp. 34Ð39, Jan. 1959.
+\bibitem{c11} S. Chen, B. Mulgrew, and P. M. Grant, ÒA clustering technique for digital communications channel equalization using radial basis function networks,Ó IEEE Trans. Neural Networks, vol. 4, pp. 570Ð578, July 1993.
+\bibitem{c12} R. W. Lucky, ÒAutomatic equalization for digital communication,Ó Bell Syst. Tech. J., vol. 44, no. 4, pp. 547Ð588, Apr. 1965.
+\bibitem{c13} S. P. Bingulac, ÒOn the compatibility of adaptive controllers (Published Conference Proceedings style),Ó in Proc. 4th Annu. Allerton Conf. Circuits and Systems Theory, New York, 1994, pp. 8Ð16.
+\bibitem{c14} G. R. Faulhaber, ÒDesign of service systems with priority reservation,Ó in Conf. Rec. 1995 IEEE Int. Conf. Communications, pp. 3Ð8.
+\bibitem{c15} W. D. Doyle, ÒMagnetization reversal in films with biaxial anisotropy,Ó in 1987 Proc. INTERMAG Conf., pp. 2.2-1Ð2.2-6.
+\bibitem{c16} G. W. Juette and L. E. Zeffanella, ÒRadio noise currents n short sections on bundle conductors (Presented Conference Paper style),Ó presented at the IEEE Summer power Meeting, Dallas, TX, June 22Ð27, 1990, Paper 90 SM 690-0 PWRS.
+\bibitem{c17} J. G. Kreifeldt, ÒAn analysis of surface-detected EMG as an amplitude-modulated noise,Ó presented at the 1989 Int. Conf. Medicine and Biological Engineering, Chicago, IL.
+\bibitem{c18} J. Williams, ÒNarrow-band analyzer (Thesis or Dissertation style),Ó Ph.D. dissertation, Dept. Elect. Eng., Harvard Univ., Cambridge, MA, 1993. 
+\bibitem{c19} N. Kawasaki, ÒParametric study of thermal and chemical nonequilibrium nozzle flow,Ó M.S. thesis, Dept. Electron. Eng., Osaka Univ., Osaka, Japan, 1993.
+\bibitem{c20} J. P. Wilkinson, ÒNonlinear resonant circuit devices (Patent style),Ó U.S. Patent 3 624 12, July 16, 1990. 
+
+
+
+
+
+
+\end{thebibliography}
+
+
+
+
+\end{document}
+
